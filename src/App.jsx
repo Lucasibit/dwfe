@@ -1,4 +1,5 @@
 import Esculturas from './components/esculturas/Esculturas';
+import Home from './components/home/Home';
 import AgendarVisita from './components/agendarVisita/AgendarVisita';
 
 import BootstapCSS from './bootstrap/css/bootstrap.min.css';
@@ -16,6 +17,7 @@ function App() {
       <body>
         <div className="App">
           <Routes>
+            <Route path="/" element={<Home/>}/>
             <Route path="/esculturas" element={<Esculturas/>}/>
             <Route path="/agendar-visitas" element={<AgendarVisita/>}/>
           </Routes>

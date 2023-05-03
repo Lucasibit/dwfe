@@ -17,7 +17,8 @@ function Card({imagemLink, titulo, descricao}){
     }
 
     let styleImgCard = {
-        maxHeight:'225px'
+        maxHeight:'225px',
+        marginTop: '1rem'
     }
 
     let styleBtnCard = {
