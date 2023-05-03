@@ -46,7 +46,7 @@ function Modal({imagem, titulo, onClickClose}){
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={onClickClose}>Fechar</button>
-                    <Link to="/agendar-visitas" class="btn btn-primary">Agendar Visita</Link>
+                    <Link to="/agendamento" class="btn btn-primary">Agendar Visita</Link>
                 </div>
                 </div>
             </div>

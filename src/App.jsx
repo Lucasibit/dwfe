@@ -1,6 +1,8 @@
 import Esculturas from './components/esculturas/Esculturas';
 import Home from './components/home/Home';
 import AgendarVisita from './components/agendarVisita/AgendarVisita';
+import Header from './components/header/Header';
+import Contato from './components/contato/Contato';
 
 import BootstapCSS from './bootstrap/css/bootstrap.min.css';
 
@@ -15,11 +17,13 @@ function App() {
       </head>
       
       <body>
+        <Header/>
         <div className="App">
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/esculturas" element={<Esculturas/>}/>
-            <Route path="/agendar-visitas" element={<AgendarVisita/>}/>
+            <Route path="/agendamento" element={<AgendarVisita/>}/>
+            <Route path="/contato" element={<Contato/>}/>
           </Routes>
         </div>
       </body>

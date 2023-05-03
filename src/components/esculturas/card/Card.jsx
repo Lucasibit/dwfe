@@ -22,12 +22,12 @@ function Card({imagemLink, titulo, descricao}){
     }
 
     let styleBtnCard = {
-        backgroundColor: '#4d6160',
-        color: '#FFF'
+        backgroundColor: '#222',
+        color: '#ffbb33'
     }
 
     const onMouseEnterHandle= (e) => {
-        e.target.style.opacity = 0.80;
+        e.target.style.opacity = 0.90;
     }
 
     const onMouseOutHandle = (e) => {
