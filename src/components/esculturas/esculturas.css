@@ -6,10 +6,13 @@
     justify-content: center;
     align-items: center;
 
-    margin-top: 5rem;
+    margin: 2rem 0 3rem 0;
 }
 
 .cards {
     width: 75%;
     gap: 3rem;
+
+    display: flex;
+    justify-content: center;
 }

@@ -1,12 +1,11 @@
 body {
 	font: 12px "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
-	height: 100vh;
 }
 
 .header-museu {
 	width: 100%;
 	margin: 0 auto;
-	height: 10%;
+	height: 7.5rem;
 	background-color: #222;
 	display: flex;
 	justify-content: center;

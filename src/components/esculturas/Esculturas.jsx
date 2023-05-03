@@ -9,7 +9,7 @@ function Esculturas(){
 
     React.useEffect(() => {
         const lista = [];
-        for(let i = 0; i < 30; i++){
+        for(let i = 0; i < 31; i++){
             let escultura;
             if (i % 2 === 0){
                 escultura = {
