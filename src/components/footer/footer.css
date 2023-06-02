@@ -1,0 +1,38 @@
+.footer {
+    background-color: #222;
+    color: #FFF;
+    padding: 3em;
+    text-align: center;
+}
+
+.footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.footer ul li {
+    list-style: none;
+}
+
+.footer ul li a {
+    color: #FFF;
+}
+
+.footer ul li a:hover{
+    color: #ffbb33;
+}
+
+.footer svg {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.copy_right {
+    margin-top: 2em;
+}
+
+.copy_right span {
+    font-weight: bold;
+    color: #ffbb33;
+}

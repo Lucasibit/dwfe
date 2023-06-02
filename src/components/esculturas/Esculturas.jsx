@@ -39,7 +39,8 @@ function Esculturas(){
         <div className="esculturas">
             <div class="row row-cols-1 row-cols-md-3 g-4 cards">
 
-                {esculturas.map((escultura) => <Card key={escultura.id} class="col" imagemLink={escultura.imagemLink} titulo={escultura.titulo} descricao={escultura.descricao}/>
+                {esculturas.map((escultura) => <Card key={escultura.id} class="col"
+                 imagemLink={escultura.imagemLink} titulo={escultura.titulo} descricao={escultura.descricao}/>
                 )}
 
             </div>
