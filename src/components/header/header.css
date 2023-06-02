@@ -58,7 +58,3 @@ nav ul li a {
 	padding-bottom: 3px;
 	text-transform: uppercase;
 }
-
-nav ul li a:hover {
-	border-bottom: 1px solid #535858;
-}

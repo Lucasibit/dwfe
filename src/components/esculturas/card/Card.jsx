@@ -3,12 +3,6 @@ import React from "react";
 import Modal from "./Modal";
 
 function Card({imagemLink, titulo, descricao}){
-    
-    const [modal, setModal] = React.useState(false);
-
-    const modalIsOpen = () => {
-        return setModal(true);
-    }
 
     let styleCard = {
         width: '20rem',
@@ -33,6 +27,13 @@ function Card({imagemLink, titulo, descricao}){
     const onMouseOutHandle = (e) => {
         e.target.style.opacity = 1;
     }
+
+    const [modal, setModal] = React.useState(false);
+
+    const modalIsOpen = () => {
+        return setModal(true);
+    }
+    
     return (
         <>
             <div class="card" style={styleCard}>
@@ -47,7 +48,8 @@ function Card({imagemLink, titulo, descricao}){
                             </button> 
                             */
                         }
-                        <button type="button" class="btn" style={styleBtnCard} onMouseOut={onMouseOutHandle} onMouseEnter={onMouseEnterHandle} onClick={() => modalIsOpen()}>
+                        <button type="button" class="btn" style={styleBtnCard} onMouseOut={onMouseOutHandle}
+                         onMouseEnter={onMouseEnterHandle} onClick={() => modalIsOpen()}>
                             Ver Escultura
                         </button> 
                     </div>

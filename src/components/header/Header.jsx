@@ -8,7 +8,7 @@ function Header () {
         <div className="header-museu">
             <header>
                 <div className="logo">
-                    <h1><a href="">Museu Nacional</a></h1>
+                    <h1><Link to="/">Museu Nacional</Link></h1>
                 </div>
 
                 <nav>
@@ -22,6 +22,7 @@ function Header () {
                 </nav>
 
             </header>
+
         </div>
 
     )
