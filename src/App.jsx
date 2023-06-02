@@ -3,6 +3,7 @@ import Home from './components/home/Home';
 import AgendarVisita from './components/agendarVisita/AgendarVisita';
 import Header from './components/header/Header';
 import Contato from './components/contato/Contato';
+import Footer from './components/footer/Footer';
 
 import BootstapCSS from './bootstrap/css/bootstrap.min.css';
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/contato" element={<Contato/>}/>
           </Routes>
         </div>
+        <Footer/>
       </body>
       </>
   );
