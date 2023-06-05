@@ -12,7 +12,7 @@
     min-height: 100vh;
 }
 
-section{
+.contato section{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,22 +22,22 @@ section{
     width: 500px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
-section h2{
+.contato section h2{
     color: #ffbb33;
     font-size: 2.5rem;
     margin: 2rem;
 }
-section form{
+.contato section form{
     display: flex;
     flex-direction: column;
     width: 100%;
 }
-form label{
+.contato form label{
     color: #ffbb33;
     font-size: 17px;
     margin-bottom: 4px;
 }
-form input{
+.contato form input{
     padding: 15px;
     outline: none;
     border: 0;
@@ -45,10 +45,10 @@ form input{
     font-size: 15px;
     transition: all 0.5s;
 }
-form input:focus{
+.contato form input:focus{
     border-radius: 16px;
 }
-form textarea{
+.contato form textarea{
     padding: 10px;
     outline: none;
     border: 0;
@@ -56,10 +56,10 @@ form textarea{
     margin-bottom: 30px;
     transition: all 0.5s;
 }
-form textarea:focus{
+.contato form textarea:focus{
     border-radius: 16px;
 }
-form button{
+.contato form button{
     padding: 15px;
     cursor: pointer;
     font-size: 16px;
@@ -69,7 +69,7 @@ form button{
     transition: all 1s;
     margin-bottom: 20px;
 }
-form button:hover{
+.contato form button:hover{
     background: #ffbb33;
     color: #101026;
     border-radius: 16px;
