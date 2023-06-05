@@ -1,3 +1,7 @@
+import CarouselHome from './carousel/carouselHome';
+import MainHome from './mainHome/MainHome';
+import Gallery from './gallery/Gallery';
+
 function Home(){
     return (
         <body>
