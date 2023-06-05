@@ -1,0 +1,9 @@
+.email, .celular {
+    display: flex;
+    flex-direction: column;
+}
+
+.email input, .celular input{
+    max-width: 70rem;
+    height: 2.5rem;
+}
