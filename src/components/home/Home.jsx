@@ -1,25 +1,22 @@
-import './home.css';
-
-import { Link } from "react-router-dom";
-
 function Home(){
-
-    let styleButtons = {
-        display:'flex',
-        gap: '2rem'
-    }
-
     return (
-        <section className="home_container">
-            <h1>Bem-vindo ao <span>Museu Nacional</span></h1>
-
-            <p>Agende sua visita ao nosso museu!</p>
-            <div style={styleButtons}>
-                <Link to="/esculturas" className="btn button">Ver Esculturas</Link>
-                <Link to="/agendamento" className="btn button">Agendar Visita</Link>
+        <body>
+            <div className='row'>
+                <div className='col-12'>
+                    <CarouselHome />
+                </div>
             </div>
-
-        </section>
+            <div className='row-12'>
+                <div className='col-12'>
+                    <MainHome />
+                </div>
+            </div>
+            <div className='row-12'>
+                <div className='col-12'>
+                    <Gallery />
+                </div>
+            </div>
+        </body>
     )
 }
 
