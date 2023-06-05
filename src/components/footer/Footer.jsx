@@ -24,7 +24,7 @@ export default function Footer() {
                 </div>
             </div>
 
-            <ul class=""footer-list>
+            <ul class="footer-list">
                 <li>
                     <h3>Esculturas</h3>
                 </li>
@@ -39,7 +39,7 @@ export default function Footer() {
                 </li>
             </ul>
 
-            <ul class=""footer-list>
+            <ul class="footer-list">
                 <li>
                     <h3>Agendamento</h3>
                 </li>
