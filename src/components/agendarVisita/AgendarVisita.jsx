@@ -72,12 +72,8 @@ function AgendarVisita(){
                             </select>
                         </div>
 
-                        <div className="space">
-                            <div>
-                                <h5>Data da visita: {dataVisita}</h5>
-                                <h5>Hora da visita: {horaVisita}</h5>
-                                <h5>Quantida de visitantes: {qntVisitantes}</h5>
-                            </div>
+                        <div className="space" style={{backgroundColor: 'transparent', height:"0.5rem"}}>
+                            <hr />
                         </div>
 
                         <VisitantesCadastro arr={arrayQntVisitantes}/>
