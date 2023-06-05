@@ -9,7 +9,7 @@ function VisitantesCadastro({ arr }) {
         <label htmlFor="email">
           E-mail (para qual será enviado o comprovante)
         </label>
-        <input type="text" placeholder="example@gmail.com"/>
+        <input type="email" placeholder="example@gmail.com"/>
       </div>
 
       <div className="celular">
