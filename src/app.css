@@ -1,0 +1,8 @@
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.App {
+    min-height: 67.6vh;
+}

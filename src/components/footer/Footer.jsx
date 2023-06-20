@@ -41,7 +41,7 @@ export default function Footer() {
 
             <ul class="footer-list">
                 <li>
-                    <h3>Agendamento</h3>
+                    <h3>Agenda</h3>
                 </li>
                 <li>
                     <a href="#" class="footer-link">Contato</a>
@@ -73,7 +73,7 @@ export default function Footer() {
 
         </div>
 
-        <div id="footer_copyright">
+        <div id="footer-copyright">
             &copy; 2023 All rights reserved.
         </div>
     </footer>
