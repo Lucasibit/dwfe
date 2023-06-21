@@ -75,13 +75,13 @@
     }
 }
 
-@media only screen and (max-width: 1000px) {    
+@media screen and (max-width: 1000px) {    
     .form input, .form select {
         width: 25rem;
     }
 }
 
-@media only screen and (max-width: 450px) {
+@media screen and (max-width: 450px) {
     .form input, .form select {
         width: 23rem;
     }
