@@ -24,10 +24,10 @@ export default function Gallery() {
   let sculpture = sculptureList[index];
   return (
     <div className="gallery-container">
-      <button type="button" class="btn btn-outline-primary" onClick={handlePreviousClick}>
+      <button type="button" className="btn btn-outline-primary" onClick={handlePreviousClick}>
         Previous
       </button>
-      <button type="button" class="btn btn-outline-primary" onClick={handleClick}>
+      <button type="button" className="btn btn-outline-primary" onClick={handleClick}>
         Next
       </button>
       <h2>
@@ -40,6 +40,7 @@ export default function Gallery() {
       <img 
         src={sculpture.url} 
         alt={sculpture.alt}
+        className="gallery-image"
       />
       <p>
         {sculpture.description}

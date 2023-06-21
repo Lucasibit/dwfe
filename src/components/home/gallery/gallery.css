@@ -1,6 +1,10 @@
 .gallery-container {
-    margin: 100px auto;
+    margin: 20px auto;
     max-width: 800px;
     text-align: center;
   }
-  
+.gallery-image {
+  max-width: 100%;
+  width: 600px;
+  margin-top: 20px;
+}
