@@ -15,29 +15,41 @@ function AuthProvider({children}){
         .catch(err => console.log(err))
     }
 
-    
+    async function getAllUsers(){
+        const response = await axios.get('http://localhost:3000/usuarios');
+        const data = response.data;
+        return data;
+    }
+
     useEffect(() => {
 
         const fetchData = async () => {
             try{
-                const response = await axios.get('http://localhost:3000/usuarios');
-                const data = response.data;
-    
-                setAllUsers(data);
-                
-                const userToken = localStorage.getItem("user_token");
-                const usersStorage = data;
+                const intervalId = setInterval(async () => {
+                    // Lógica que será executada a cada 2 segundos
+                    const data = await getAllUsers();
+        
+                    setAllUsers(data);
+                    
+                    const userToken = localStorage.getItem("user_token");
+                    const usersStorage = data;
 
-                if(userToken && usersStorage){
-                    const hasUser = usersStorage.filter(
-                        (user) => user.email === JSON.parse(userToken).email
-                    );
+                    if(userToken && usersStorage){
+                        const hasUser = usersStorage.filter(
+                            (user) => user.email === JSON.parse(userToken).email
+                        );
 
-                    if(hasUser){
-                        setUser(hasUser[0]);
-                        setLogado(true);
+                        if(hasUser){
+                            setUser(hasUser[0]);
+                        }
                     }
-                }
+                    console.log('Executando a cada 2 segundos');
+                }, 2000);
+
+                return () => {
+                    // Limpar o intervalo quando o componente for desmontado
+                    clearInterval(intervalId);
+                };
             }catch(e){
                 console.log(e);
             }

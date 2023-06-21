@@ -1,6 +1,17 @@
 {
   "usuarios": [
-   
+    {
+      "nome": "Lucas",
+      "email": "lucas@gmail.com",
+      "senha": "lucas123",
+      "id": 1
+    },
+    {
+      "nome": "Theo",
+      "email": "theo@gmail.com",
+      "senha": "1",
+      "id": 2
+    }
   ],
   "visitas": [
     {
