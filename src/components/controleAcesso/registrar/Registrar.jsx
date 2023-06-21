@@ -39,7 +39,7 @@ function Registrar(){
 
     return(
         <div className="registrarContainer">
-        <div className="registrarLabel">SISTEMA DE LOGIN</div>
+        <div className="registrarLabel">Realizar Cadastro</div>
         <div className="registrarContent">
             <Input
                 type="text"

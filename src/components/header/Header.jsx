@@ -23,13 +23,14 @@ function Header({ setTheme }) {
                         <li><Link to='/contato'>Contato</Link></li>
                         <li><Link to='/agendamento'>Agendamento</Link></li>
                         <li>
-                            <Link to="/" onClick={() => [Signout(), navigate("/")]}>Sair</Link>
+                            
                         </li>
-                        <li>
-                            <a onClick={setTheme} class="themeProvider">
-                                <li class='fa-regular fa-moon'></li>
-                            </a>
+                        <li id='lastChield'>
+                            <i class='themeProvider fa-regular fa-moon' onClick={setTheme} id='moon'></i>
+
+                            <Link to="/" onClick={() => [Signout(), navigate("/")]}>Sair <i class="far fa-user"></i></Link>
                         </li>
+                        
                         
 
                     </ul>

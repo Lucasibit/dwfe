@@ -25,10 +25,10 @@ export default function Gallery() {
   return (
     <div className="gallery-container">
       <button type="button" className="btn btn-outline-primary" onClick={handlePreviousClick}>
-        Previous
+        Anterior
       </button>
       <button type="button" className="btn btn-outline-primary" onClick={handleClick}>
-        Next
+        Próxima
       </button>
       <h2>
         <i>{sculpture.name} </i> 

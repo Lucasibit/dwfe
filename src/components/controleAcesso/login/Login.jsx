@@ -34,7 +34,7 @@ function Login(){
 
     return(
         <div className="loginContainer">
-            <div className="loginLabel">SISTEMA DE LOGIN</div>
+            <div className="loginLabel">Seja Bem Vindo(a)!</div>
             <div className="loginContent">
                 <Input
                 type="email"
