@@ -54,3 +54,35 @@
     color: #101026;
     border-radius: 16px;
 }
+
+.agendarVisita h1 {
+    width: 100vw;
+}
+
+@media only screen and (max-width: 800px) {
+    .agendarVisita {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 3rem;
+    }
+
+    .form {
+        width: 80vw;
+    }
+
+    .form input, .form select {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {    
+    .form input, .form select {
+        width: 25rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .form input, .form select {
+        width: 23rem;
+    }
+}

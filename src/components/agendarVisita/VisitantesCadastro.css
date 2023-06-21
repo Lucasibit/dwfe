@@ -7,3 +7,20 @@
     max-width: 70rem;
     height: 2.5rem;
 }
+
+.pessoa {
+    min-height: 20rem;
+}
+@media only screen and (max-width: 1120px) {
+    .documentAndName{
+        display: block;
+    }
+
+    .documentAndName div{
+        width: 100%;
+    }
+
+    .pessoa {
+        min-height: 22rem;
+    }
+}

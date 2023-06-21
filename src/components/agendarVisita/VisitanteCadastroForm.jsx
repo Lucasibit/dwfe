@@ -18,12 +18,11 @@ function VisitanteCadastroForm() {
             <label htmlFor="">Documento</label>
             <input type="text" />
           </div>
-
-          <div className="nameInput">
+        </div>
+      </div>
+      <div className="nameInput">
             <label htmlFor="">Nome</label>
             <input placeholder="Seu Nome" type="text" />
-          </div>
-        </div>
       </div>
       <div>
         <div className="typeTicket">

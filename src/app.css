@@ -3,6 +3,11 @@
     color: #fff;
 }
 
+.dark-theme button {
+    color: #fff;
+}
+
 .App {
     min-height: 67.6vh;
+    overflow-x: hidden;
 }

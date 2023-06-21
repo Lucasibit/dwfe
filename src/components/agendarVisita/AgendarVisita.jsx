@@ -12,6 +12,7 @@ function AgendarVisita(){
     const [dataVisita, setDataVisita] = React.useState("");
     const [horaVisita, setHoraVisita] = React.useState("");
   
+    const [cadastro, setCadastro] = React.useState({data:"", horario: "", pessoas:[], email:"", celular:""})
     function selectHandleOnChange(e){
         setQntVisitantes(e.target.value)
         let arr = []
@@ -58,7 +59,8 @@ function AgendarVisita(){
 
                         <div className='quantity'>
                             <label htmlFor="">Número de pessoas no grupo </label>
-                            <select onChange={selectHandleOnChange} name="quantidade" title="Escolha a quantidade de pessoas no grupo" >
+                            <select onChange={selectHandleOnChange} name="quantidade"
+                             title="Escolha a quantidade de pessoas no grupo" >
                                 <option selected value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>

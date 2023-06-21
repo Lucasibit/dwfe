@@ -19,7 +19,7 @@ function VisitantesCadastro({ arr }) {
 
       {arr.length > 0 &&
         arr.map((visitante) => (
-          <div>
+          <div className="pessoa">
             <h1>Pessoa {visitante}:</h1>
             {<VisitanteCadastroForm />}
           </div>
