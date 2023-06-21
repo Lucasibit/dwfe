@@ -1,0 +1,26 @@
+{
+    "usuarios":[
+        {
+            "nome":"lucas",
+            "email": "lucas@gmail.com",
+            "senha":"lucas"
+        }
+    ],
+    "visitas":[
+        {
+            "data":"",
+            "horario":"",
+            "visitantes":{
+                "quantidade": 1,
+                "pessoas":[
+                    {
+                        "tipoDocumento":"cpf",
+                        "documento":"000.000.000-00",
+                        "nome": "lucas",
+                        "tipoIngresso":"inteira"
+                    }
+                ]
+            }
+        }
+    ]
+}
