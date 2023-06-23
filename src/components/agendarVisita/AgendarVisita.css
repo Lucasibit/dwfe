@@ -2,11 +2,20 @@
     display: flex;
     width: 100vw;
     justify-content: center;
+
 }
 .contentVisita {
     width: 40%;
     display: flex;
     flex-direction: column;
+
+    background-color: #222;
+    color: #ffbb33;
+    padding: 0 3rem 1.5em 3rem;
+
+    margin: 5rem 0 5rem 0;
+
+    border-radius: 16px;
 }
 
 .date, .hour, .quantity {
@@ -45,7 +54,7 @@
     font-size: 16px;
     background: transparent;
     border: 2px solid #ffbb33;
-    color: #222;
+    color: #ffbb33;
     transition: all 1s;
     margin-bottom: 20px;
 }

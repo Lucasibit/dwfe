@@ -1,83 +1,190 @@
 body {
-	font: 12px "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+  font: 12px "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
 }
 
 .header-museu {
-	width: 100%;
-	margin: 0 auto;
-	height: 7.5rem;
-	background-color: #222;
-	display: flex;
-	justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 7.5rem;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
 }
 
-.logo a, nav ul li a {
-	color: #ffbb33;
-	text-decoration: none;
+.logo a,
+nav ul li a {
+  color: #ffbb33;
+  text-decoration: none;
 }
 
 a:hover {
-	opacity: 0.75;
+  opacity: 0.75;
 }
 
 /* Logo 
 ------------------------------------ */
 #logo h1 {
-	float: left;
+  float: left;
 }
 
 #logo a {
-	font-size: 100px;
+  font-size: 100px;
 }
-
 
 /* Barra de navegação 
 ------------------------------------ */
 header {
-	padding: 15px 0;
-	height: 100%;
-	width: 70%;
-	margin-bottom: 50px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  padding: 15px 0;
+  height: 100%;
+  width: 85%;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  position: relative;
+}
+
+header i {
+  color: #ffbb33;
 }
 
 nav ul {
-	list-style: none;
-	margin: 20px;
+  list-style: none;
+  margin: 20px;
 }
 
 nav ul li {
-	float: left;
+  float: left;
 }
 
 nav ul li a {
-	display: block;
-	margin-right: 25px;
-	padding-bottom: 3px;
-	text-transform: uppercase;
+  display: block;
+  margin-right: 25px;
+  padding-bottom: 3px;
+  text-transform: uppercase;
 }
 
 .themeProvider {
-	color: #ffbb33;
-	background-color: transparent;
-	border: none;
-	cursor: pointer;
-	font-size: 1.5em;
-  }
+  color: #ffbb33;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+}
 
-  #lastChield{
-	display: flex;
-	margin-left: 5rem;
-	justify-content: center;
-  }
+#lastChield {
+  display: flex;
+  margin-left: 5rem;
+  justify-content: center;
+}
 
-  #moon{
-	margin-right: 3rem;
-  }
+#moon {
+  margin-right: 3rem;
+  color: #ffbb33;
+}
 
-  #moon:hover{
-	opacity: 0.7;
-  }
-  
+#moon:hover {
+  opacity: 0.7;
+}
+#userIcon {
+  color: #222;
+  font-size: 20px;
+}
+
+.userIcon {
+  cursor: pointer;
+  background-color: #fff;
+  width: 3.5rem;
+  height: 3.5rem;
+
+  background-color: #ffbb33;
+  color: #222;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 100%;
+}
+
+.userIcon:hover {
+  opacity: 0.7;
+}
+
+.themeAndUser {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  margin-top: 0.5rem;
+}
+
+.userDropContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  margin-top: 0.5rem;
+}
+.dropdownUser {
+  position: absolute;
+
+  background-color: #555;
+  border-radius: 10px;
+  top: 100%;
+  right: 50;
+  width: 300px;
+  z-index: 2;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
+
+  color: #ffbb33;
+}
+
+.dropHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: 3px 1.5rem 0 1.5rem;
+}
+
+.dropBtn {
+  height: 2rem;
+  width: 2rem;
+  font-size: 20px;
+
+  background-color: transparent;
+  border: none;
+  color: #ffbb33;
+}
+
+.dropBtn:hover {
+  opacity: 0.7;
+  font-size: 25px;
+}
+.btnSair {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  gap: 1rem;
+}
+
+.btnSair button, .btnSair a  {
+  background-color: #ffbb33;
+  color: #333;
+  border: none;
+}
+
+
+.btnSair button:hover, .btnSair a:hover {
+  opacity: 0.7;
+  background-color: #ffbb33;
+  color: #333;
+}

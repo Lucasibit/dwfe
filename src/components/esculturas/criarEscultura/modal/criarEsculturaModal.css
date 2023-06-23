@@ -1,0 +1,35 @@
+.alignModal{
+    display: flex;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modalFrag{
+    background-color: #222;
+    color: #ffbb33;
+}
+
+.btn-close{
+    color: #ffbb33;
+}
+
+.btnEsc{
+    background-color: #ffbb33 !important;
+    color: #222 !important;
+}
+
+.btnEsc:hover{
+    background-color: #ffbb33;
+    color: #222;
+    opacity: 0.7;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-footer{
+    background-color: #222 !important;
+}
+

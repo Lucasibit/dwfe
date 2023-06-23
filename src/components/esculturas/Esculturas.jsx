@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Card from "./card/Card";
 import "./esculturas.css";
-
+import CriarEsculturaModal from "./criarEscultura/modal/CriarEsculturaModal";
+import useAuth from '../../hooks/useAuth';
 function Esculturas(){
 
     const [esculturas, setEsculturas] = React.useState([])
+    const [modal, setModal] = React.useState(false);
 
+    function VerificandoRole(){
+        const {user} = useAuth();
+
+        return user.role === "museu:admin" ? (<div className="criarEsculturaBtn">
+            <button type="button" className="btn btn-primary" onClick={() => setModal(true)}>Criar Escultura</button>
+        </div>) : "";
+    }
+    
     React.useEffect(() => {
         const lista = [];
         for(let i = 0; i < 31; i++){
@@ -36,15 +46,21 @@ function Esculturas(){
     }, [])
     console.log(esculturas)
     return (
-        <div className="esculturas">
-            <div class="row row-cols-1 row-cols-md-3 g-4 cards">
+        <>
+            <div className="esculturas">
+                <VerificandoRole/>
+                <div class="row row-cols-1 row-cols-md-3 g-4 cards">
 
-                {esculturas.map((escultura) => <Card key={escultura.id} class="col"
-                 imagemLink={escultura.imagemLink} titulo={escultura.titulo} descricao={escultura.descricao}/>
-                )}
+                    {esculturas.map((escultura) => <Card key={escultura.id} class="col"
+                    imagemLink={escultura.imagemLink} titulo={escultura.titulo} descricao={escultura.descricao}/>
+                    )}
 
+                </div>
             </div>
-        </div>
+
+            {modal === true ? <CriarEsculturaModal onClickClose={() => setModal(false)}/> : ""}
+        </>
+
     )
 }
 

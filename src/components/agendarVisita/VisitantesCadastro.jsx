@@ -1,4 +1,4 @@
-import VisitanteCadastroForm from "./VisitanteCadastroForm";
+import Visitante from "./Visitante";
 
 import "./VisitantesCadastro.css";
 
@@ -21,7 +21,7 @@ function VisitantesCadastro({ arr }) {
         arr.map((visitante) => (
           <div className="pessoa">
             <h1>Pessoa {visitante}:</h1>
-            {<VisitanteCadastroForm />}
+            {<Visitante />}
           </div>
         ))}
     </div>

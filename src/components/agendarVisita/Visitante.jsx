@@ -1,6 +1,6 @@
-import "./VisitanteCadastroForm.css";
+import "./Visitante.css";
 
-function VisitanteCadastroForm() {
+function Visitante() {
   return (
     <div className="cadastroForm">
       <div >
@@ -42,4 +42,4 @@ function VisitanteCadastroForm() {
   );
 }
 
-export default VisitanteCadastroForm;
+export default Visitante;

@@ -22,7 +22,6 @@ function AuthProvider({children}){
     }
 
     useEffect(() => {
-
         const fetchData = async () => {
             try{
                 const intervalId = setInterval(async () => {
@@ -47,7 +46,6 @@ function AuthProvider({children}){
                 }, 2000);
 
                 return () => {
-                    // Limpar o intervalo quando o componente for desmontado
                     clearInterval(intervalId);
                 };
             }catch(e){
@@ -69,10 +67,10 @@ function AuthProvider({children}){
         if(hasUser.length){
             if (hasUser[0].email === email && hasUser[0].senha === senha) {
                 const token = Math.random().toString(36).substring(2);
-                localStorage.setItem("token", token);
-                console.log(localStorage.getItem("token"));
-                const nome = hasUser[0].nome;
-                setUser({ email, senha, nome});
+                const user = {email, token, nome: hasUser[0].nome, role: hasUser[0].role}
+                localStorage.setItem("user_token", JSON.stringify(user));
+                console.log(localStorage.getItem("user_token"));
+                setUser({ email, senha, nome:user.nome, role: user.role});
                 setLogado(true);
                 return;
             }else {
@@ -85,7 +83,7 @@ function AuthProvider({children}){
 
 
     function UsuarioAutenticado(){
-        const storage = localStorage.getItem("token");
+        const storage = localStorage.getItem("user_token");
         return storage != undefined || storage != null ? true : false;
     }
 
@@ -99,7 +97,7 @@ function AuthProvider({children}){
         }
         let newUser;
         if(nome, email, senha){
-            newUser = {nome, email, senha};
+            newUser = {nome, email, senha, role: "museu:user"};
         }else{
             throw new Error()
         }
@@ -110,11 +108,11 @@ function AuthProvider({children}){
 
     function Signout(){
         setUser(null);
-        localStorage.removeItem("token");
+        localStorage.removeItem("user_token");
         setLogado(false);
     }
     return (
-        <AuthContext.Provider value={{user, logado: true, Signin, Signup, Signout, UsuarioAutenticado}}>
+        <AuthContext.Provider value={{user, Signin, Signup, Signout, UsuarioAutenticado}}>
             {children}
         </AuthContext.Provider>
     )

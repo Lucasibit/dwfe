@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { ThemeContext } from './context/ThemeContext';
 import Header from './components/header/Header';
@@ -10,9 +10,9 @@ import Contato from './components/contato/Contato';
 import Login from './components/controleAcesso/login/Login';
 import AuthProvider from './contexts/Auth';
 import useAuth from './hooks/useAuth';
-import ComponenteVazio from './components/ComponenteVazio';
 import './app.css'
 import Registrar from './components/controleAcesso/registrar/Registrar';
+import Users from './components/controleAcesso/users/Users';
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -23,34 +23,33 @@ function App() {
   }
 
   const Private = ({ Item}) => {
-    const {UsuarioAutenticado} = useAuth();
-    console.log(UsuarioAutenticado());
+    const auth = useAuth();
 
-    console.log(localStorage.getItem("user_token"));
-    return UsuarioAutenticado() ? <Item /> : <Login />;
+    return auth.UsuarioAutenticado() ? <Item /> : <Login />;
   };
 
   const PrivateComp = ({Item}) => {
-    const {UsuarioAutenticado} = useAuth();
+    const auth = useAuth();
 
-    return UsuarioAutenticado() ?Item : "";
+    return auth.UsuarioAutenticado() ?Item : "";
   }
 
   const PrivateAcesso = ({Item}) => {
-    const {UsuarioAutenticado} = useAuth();
+    const auth = useAuth();
 
-    return UsuarioAutenticado() ? navigate("/home") : Item;
+    return auth.UsuarioAutenticado() ? navigate("/home") : Item;
   }
   return (
     <ThemeContext.Provider value={theme}>
       <AuthProvider>
-        <PrivateComp Item={<Header setTheme={toggleTheme} />}/>
+        <PrivateComp Item={<Header setTheme={toggleTheme} tema={theme} />}/>
         <div className={`App ${theme === "dark" ? "dark-theme" : ""}`}>
           <Routes>
             <Route exact path="/home" element={<Private Item={Home}/>} />
             <Route exact path="/esculturas" element={<Private Item={Esculturas} />} />
             <Route exact path="/agendamento" element={<Private Item={AgendarVisita} />} />
             <Route exact path="/contato" element={<Private Item={Contato} />} />
+            <Route exact path="/users" element={<Private Item={Users} />} />
             <Route exact path='/registrar' element={<PrivateAcesso Item={<Registrar/>} />}/>
             <Route path='/' element={<PrivateAcesso Item={<Login/>} />}/>
           </Routes>

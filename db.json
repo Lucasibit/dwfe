@@ -1,16 +1,11 @@
 {
   "usuarios": [
     {
-      "nome": "Lucas",
+      "nome": "Lucas Pablo",
       "email": "lucas@gmail.com",
-      "senha": "lucas123",
-      "id": 1
-    },
-    {
-      "nome": "Theo",
-      "email": "theo@gmail.com",
       "senha": "1",
-      "id": 2
+      "role": "museu:admin",
+      "id": 1
     }
   ],
   "visitas": [
@@ -29,6 +24,26 @@
           }
         ]
       }
+    }
+  ],
+  "esculturas": [
+    {
+      "id": 1,
+      "titulo": "",
+      "descricao": "",
+      "urlImagem": ""
+    },
+    {
+      "titulo": "teste",
+      "descricao": "teste",
+      "urlImagem": "https:teste.com.br",
+      "id": 2
+    },
+    {
+      "titulo": "TESTE",
+      "descricao": "TESTE",
+      "urlImagem": "http://teste.com",
+      "id": 3
     }
   ]
 }
