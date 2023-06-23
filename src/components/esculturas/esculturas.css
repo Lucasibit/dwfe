@@ -24,3 +24,14 @@
 
     margin-bottom: 3rem;
 }
+
+.criarEsculturaBtn button{
+    background-color: #ffbb33;
+    color: #222;
+}
+
+.criarEsculturaBtn button:hover{
+    opacity: 0.8;
+    background-color: #ffbb33;
+    color: #222;
+}

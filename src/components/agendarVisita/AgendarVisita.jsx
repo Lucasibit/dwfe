@@ -38,7 +38,7 @@ function AgendarVisita(){
     return (
         <div className='agendarVisita'>
             <div className='contentVisita'>
-                <h1>AGENDE SUA VISITA!</h1>
+                <h1>Agende sua Visita!</h1>
                 <div className="form">
                     <form method='post'>
 

@@ -13,7 +13,7 @@ function Esculturas(){
         const {user} = useAuth();
 
         return user.role === "museu:admin" ? (<div className="criarEsculturaBtn">
-            <button type="button" className="btn btn-primary" onClick={() => setModal(true)}>Criar Escultura</button>
+            <button type="button" className="btn" onClick={() => setModal(true)}>Criar Escultura</button>
         </div>) : "";
     }
     
