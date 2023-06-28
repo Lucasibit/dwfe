@@ -41,7 +41,7 @@ function Users(){
 
     return(
     <>
-      <div class="d-flex flex-column">
+      <div class="d-flex flex-column" id="users-controle">
             <div class="d-flex justify-content-between">
                 <h2>Usuários</h2>
             </div>

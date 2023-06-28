@@ -3,7 +3,7 @@ import "./Visitante.css";
 function Visitante({handleOnChange}) {
   return (
     <div className="cadastroForm">
-      <div >
+      <div className="inputs">
         <div className="documentAndName">
           <div className="documentType">
             <label htmlFor="tipoDocumento">Tipo Documento</label>

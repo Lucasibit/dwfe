@@ -68,6 +68,9 @@
     width: 100vw;
 }
 
+.form label{
+    text-overflow: ellipsis;
+}
 @media only screen and (max-width: 800px) {
     .agendarVisita {
         display: flex;
@@ -88,10 +91,28 @@
     .form input, .form select {
         width: 25rem;
     }
+
+    .contentVisita{
+        width: 70%;
+    }
 }
 
 @media screen and (max-width: 450px) {
     .form input, .form select {
         width: 23rem;
     }
+}
+
+@media screen and (max-width: 800px) {
+    .submit{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .form input, .form select{
+        width: 70%;
+    }
+
+
 }

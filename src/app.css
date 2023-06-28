@@ -15,6 +15,18 @@
     color: #222;
 }
 
+.dark-theme th, .dark-theme tr{
+    color: #fff;
+}
+
+.dark-theme .loginLabel {
+    color: #fff;
+}
+
+.dark-theme .registrarLabel{
+    color: #fff;
+}
+
 .App {
     min-height: 67.6vh;
     overflow-x: hidden;
