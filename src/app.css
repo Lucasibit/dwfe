@@ -7,6 +7,14 @@
     color: #fff;
 }
 
+.dark-theme #modal-esculturas{
+    color: #222;
+}
+
+.dark-theme #modal-criarEscultura{
+    color: #222;
+}
+
 .App {
     min-height: 67.6vh;
     overflow-x: hidden;

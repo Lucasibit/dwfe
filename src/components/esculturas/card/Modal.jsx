@@ -15,7 +15,7 @@ function Modal({imagem, titulo, onClickClose}){
     }
 
     return (
-        <div class="modal show fade  w-100 p-3" style={modalStyle}>
+        <div class="modal show fade  w-100 p-3" id="modal-esculturas" style={modalStyle}>
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
                 <div class="modal-header">

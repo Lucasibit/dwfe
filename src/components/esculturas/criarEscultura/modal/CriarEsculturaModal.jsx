@@ -35,7 +35,7 @@ function CriarEsculturaModal({onClickClose}){
     }
 
     return (
-        <div class="modal show fade  w-100 p-3 alignModal" style={modalStyle}>
+        <div class="modal show fade  w-100 p-3 alignModal" id="modal-criarEscultura" style={modalStyle}>
             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
                 <div class="modal-content">
                 <div class="modal-header modalFrag">
