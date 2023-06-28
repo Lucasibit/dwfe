@@ -1,33 +1,33 @@
 import "./Visitante.css";
 
-function Visitante() {
+function Visitante({handleOnChange}) {
   return (
     <div className="cadastroForm">
       <div >
         <div className="documentAndName">
           <div className="documentType">
-            <label htmlFor="">Tipo Documento</label>
-            <select name="" id="">
-              <option value="">Escolha o tipo do documento</option>
+            <label htmlFor="tipoDocumento">Tipo Documento</label>
+            <select name="tipoDocumento" onChange={handleOnChange}>
+              <option selected disabled value="">Escolha o tipo do documento</option>
               <option value="cpf">CPF</option>
               <option value="rg">RG</option>
             </select>
           </div>
 
-          <div className="documentInput">
-            <label htmlFor="">Documento</label>
-            <input type="text" />
+          <div className="documento">
+            <label htmlFor="documento">Documento</label>
+            <input type="text" name="documentInput"  onChange={handleOnChange}/>
           </div>
         </div>
       </div>
-      <div className="nameInput">
-            <label htmlFor="">Nome</label>
-            <input placeholder="Seu Nome" type="text" />
+      <div className="nome">
+            <label htmlFor="nameInput">Nome</label>
+            <input placeholder="Seu Nome" name="nome" type="text"  onChange={handleOnChange} />
       </div>
       <div>
         <div className="typeTicket">
           <label htmlFor="typeTicket">Tipo do ingresso </label>
-          <select name="" id="">
+          <select name="tipoIngresso" id="" onChange={handleOnChange}>
             <option selected disabled value="">
               Escolha o tipo do ingresso
             </option>

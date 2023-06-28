@@ -12,11 +12,23 @@ function Esculturas(){
     function VerificandoRole(){
         const {user} = useAuth();
 
-        return user.role === "museu:admin" ? (<div className="criarEsculturaBtn">
-            <button type="button" className="btn" onClick={() => setModal(true)}>Criar Escultura</button>
-        </div>) : "";
+        function ReturnRole(){
+            try{
+                return(
+                    <div>   
+                        {user.role === "museu:admin" &&
+                        (<button type="button" className="btn" onClick={() => setModal(true)}>Criar Escultura</button>) }
+                    </div>
+                );
+            }catch(e){
+                return ("")
+            }
+        }
+        return <ReturnRole/>
+        
     }
     
+
     React.useEffect(() => {
         const lista = [];
         for(let i = 0; i < 31; i++){
@@ -25,14 +37,14 @@ function Esculturas(){
                 escultura = {
                     id: i,
                     imagemLink: "https://www.cidadeecultura.com/wp-content/uploads/2018/12/Copenhagen-Glyptotek-Museu-de-Esculturas-X-web.jpg",
-                    titulo: "Estátuas Antigas",
+                    titulo: "Estatuas Antigas",
                     descricao: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit eligendi similique sint maxime, et rem deleniti praesentium pariatur maiores aliquid reprehenderit impedit quaerat distinctio odio eius est hic deserunt. Sapiente.",
                     }
             } else {
                 escultura = {
                     id: 2,
                     imagemLink: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Napoli%2C_museo_archeologico_%288105421184%29.jpg/450px-Napoli%2C_museo_archeologico_%288105421184%29.jpg",
-                    titulo: "Atlas Farnésio",
+                    titulo: "Esculturas Antigas",
                     descricao: "Lorem ipsum dolor, sit amet consectetuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar adipisicing elit. Suscipit eligendi similique sint maxime, et rem deleniti praesentium pariatur maiores aliquid reprehenderit impedit quaerat distinctio odio eius est hic deserunt. Sapiente.",
                  }
             }
@@ -44,11 +56,13 @@ function Esculturas(){
         }
         setEsculturas(lista)
     }, [])
-    console.log(esculturas)
     return (
         <>
             <div className="esculturas">
-                <VerificandoRole/>
+                <div className="criarEsculturaBtn">
+                    <VerificandoRole/>
+
+                </div>
                 <div class="row row-cols-1 row-cols-md-3 g-4 cards">
 
                     {esculturas.map((escultura) => <Card key={escultura.id} class="col"

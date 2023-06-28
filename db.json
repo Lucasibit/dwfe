@@ -1,7 +1,7 @@
 {
   "usuarios": [
     {
-      "nome": "Lucas Pablo",
+      "nome": "Lucas Pablo de Paula",
       "email": "lucas@gmail.com",
       "senha": "1",
       "role": "museu:admin",
@@ -10,20 +10,27 @@
   ],
   "visitas": [
     {
-      "id": 1,
-      "data": "",
-      "horario": "",
-      "visitantes": {
-        "quantidade": 1,
-        "pessoas": [
-          {
-            "tipoDocumento": "cpf",
-            "documento": "000.000.000-00",
-            "nome": "lucas",
-            "tipoIngresso": "inteira"
-          }
-        ]
-      }
+      "data": "2023-06-29",
+      "horario": "07:00 as 12:00",
+      "pessoas": [
+        {
+          "tipoDocumento": "cpf",
+          "documentInput": "111",
+          "nome": "lucas",
+          "tipoIngresso": "inteira"
+        },
+        {
+          "tipoDocumento": "cpf",
+          "documentInput": "111",
+          "nome": "theo",
+          "tipoIngresso": "meia"
+        }
+      ],
+      "email": "lucas@gmail.com",
+      "celular": "1111",
+      "quantidade": "2",
+      "idUsuario": 1,
+      "id": 1
     }
   ],
   "esculturas": [

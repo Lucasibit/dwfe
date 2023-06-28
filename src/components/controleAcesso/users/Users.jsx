@@ -1,15 +1,20 @@
 import axios from "axios";
 import { useState, useEffect } from "react"
+import useAuth from '../../../hooks/useAuth';
+import Alert from 'react-bootstrap/Alert';
 
 function Users(){
 
     const[users, setUsers] = useState([]);
+    const {user, Signout} = useAuth();
+    const [show, setShow] = useState(false);
 
 
-    useEffect(async () => {
+    useEffect( () => {
         try{
-            const response = await axios.get('http://localhost:3000/usuarios');
-            setUsers(response.data);
+            axios.get('http://localhost:3000/usuarios')
+            .then(res => setUsers(res.data))
+            .catch(e => console.log(e));
             
         }catch(e){
             console.log(e)
@@ -17,21 +22,26 @@ function Users(){
         
     }, [])
 
-
-    async function deleteUser(id){
+    async function DeleteUser(id){
         try{
             console.log(id);
             const respnse = await axios.delete(`http://localhost:3000/usuarios/${id}`);
             console.log(respnse);
+            if(user.id === id){
+                Signout();
+                console.log(`${id}: Usuário deletado`)
+            }
+
             window.location.reload();
+            setShow(true);
         }catch(e){
             console.log(e);
         }
     }
 
     return(
-
-        <div class="d-flex flex-column">
+    <>
+      <div class="d-flex flex-column">
             <div class="d-flex justify-content-between">
                 <h2>Usuários</h2>
             </div>
@@ -54,13 +64,18 @@ function Users(){
                                 <td>{user.nome}</td>
                                 <td>{user.email}</td>
                                 <td>{user.role}</td>
-                                <td><button type="button" className="btn btn-danger" onClick={() => deleteUser(user.id)}>APAGAR</button></td>
+                                <td><button type="button" className="btn btn-danger" onClick={() => DeleteUser(user.id)}>APAGAR</button></td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
         </div>
+
+        <Alert show={show} variant="sucess">
+            Usuário deletado
+        </Alert>
+        </>
     )
 }
 

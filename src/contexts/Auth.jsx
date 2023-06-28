@@ -24,8 +24,6 @@ function AuthProvider({children}){
     useEffect(() => {
         const fetchData = async () => {
             try{
-                const intervalId = setInterval(async () => {
-                    // Lógica que será executada a cada 2 segundos
                     const data = await getAllUsers();
         
                     setAllUsers(data);
@@ -42,12 +40,7 @@ function AuthProvider({children}){
                             setUser(hasUser[0]);
                         }
                     }
-                    console.log('Executando a cada 2 segundos');
-                }, 2000);
-
-                return () => {
-                    clearInterval(intervalId);
-                };
+        
             }catch(e){
                 console.log(e);
             }
@@ -67,7 +60,7 @@ function AuthProvider({children}){
         if(hasUser.length){
             if (hasUser[0].email === email && hasUser[0].senha === senha) {
                 const token = Math.random().toString(36).substring(2);
-                const user = {email, token, nome: hasUser[0].nome, role: hasUser[0].role}
+                const user = {email, token, nome: hasUser[0].nome, role: hasUser[0].role, id: hasUser[0].id}
                 localStorage.setItem("user_token", JSON.stringify(user));
                 console.log(localStorage.getItem("user_token"));
                 setUser({ email, senha, nome:user.nome, role: user.role});

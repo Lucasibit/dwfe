@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import VisitantesCadastro from './VisitantesCadastro';
 import './AgendarVisita.css';
+import axios from 'axios';
+
+import useAuth from '../../hooks/useAuth';
 
 function AgendarVisita(){
 
@@ -9,10 +12,11 @@ function AgendarVisita(){
     const [qntVisitantes, setQntVisitantes] = React.useState(1);;
     const [arrayQntVisitantes, setArrauQntVisitantes] = React.useState([1]);
 
-    const [dataVisita, setDataVisita] = React.useState("");
-    const [horaVisita, setHoraVisita] = React.useState("");
-  
     const [cadastro, setCadastro] = React.useState({data:"", horario: "", pessoas:[], email:"", celular:""})
+
+    const {user} = useAuth();
+
+
     function selectHandleOnChange(e){
         setQntVisitantes(e.target.value)
         let arr = []
@@ -21,17 +25,40 @@ function AgendarVisita(){
         }
 
         setArrauQntVisitantes(arr);
+        setCadastro((prevState) => ({...prevState, [e.target.name] : e.target.value}))
+        console.log(cadastro)
     }
 
-    function DataHandleOnChange(e){
-        setDataVisita(e.target.value)
-    }
+    function handleOnChange(e){
+        const {name, value} = e.target;
+        setCadastro((prevState) => ({...prevState, [name] : value}))
+        console.log(cadastro)
 
-    function HoraHandleOnChange(e){
-        setHoraVisita(e.target.value)
+    }
+    function handleOnChangePessoas(e, index){
+        const novasPessoas = [...cadastro.pessoas];
+        novasPessoas[index] = {
+            ...novasPessoas[index],
+            [e.target.name]: e.target.value
+        }
+        setCadastro((prevState) => ({...prevState, pessoas:novasPessoas}));
+        console.log(cadastro);
     }
 
     function handleOnSubmit(e){
+        cadastro.idUsuario = user.id;
+        axios.post('http://localhost:3000/visitas', cadastro)
+        .then(res => {
+            console.log(res)
+            if(res.status === 201){
+                alert("Visita Agendada")
+            }else{
+                alert("Não foi possivel agendar a visita")
+            }
+        })
+        .catch(err => {
+            alert("Ocorreu um problema ")
+        })
         e.preventDefault();
     }
 
@@ -40,15 +67,15 @@ function AgendarVisita(){
             <div className='contentVisita'>
                 <h1>Agende sua Visita!</h1>
                 <div className="form">
-                    <form method='post'>
+                    <form method='post' onSubmit={handleOnSubmit}>
 
                         <div className='date'>
                             <label htmlFor="date">Data</label>
-                            <input type="date" onChange={DataHandleOnChange} placeholder=''/>
+                            <input type="date" name="data" onChange={handleOnChange} placeholder=''/>
                         </div>
                         <div className='hour'>
-                            <label htmlFor="date">Horário</label>
-                            <select name="" id="" onChange={HoraHandleOnChange}>
+                            <label htmlFor="horario">Horário</label>
+                            <select name="horario" onChange={handleOnChange} id="">
                                 <option selected disabled value="">Escolha um Horário</option>
                                 <option value="07:00 as 12:00">07:00 as 12:00</option>
                                 <option value="13:00 as 16:00">13:00 as 16:00</option>
@@ -78,7 +105,7 @@ function AgendarVisita(){
                             <hr />
                         </div>
 
-                        <VisitantesCadastro arr={arrayQntVisitantes}/>
+                        <VisitantesCadastro arr={arrayQntVisitantes} handleOnChange={handleOnChange} handleOnChangePessoas={handleOnChangePessoas}/>
 
                         <div className="submit">
                             <button type='submit'>Confirmar Agendamento</button>

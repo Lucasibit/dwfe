@@ -52,6 +52,7 @@ function App() {
             <Route exact path="/users" element={<Private Item={Users} />} />
             <Route exact path='/registrar' element={<PrivateAcesso Item={<Registrar/>} />}/>
             <Route path='/' element={<PrivateAcesso Item={<Login/>} />}/>
+            <Route path='*' element={<Private Item={<Home/>} />}/>
           </Routes>
         </div>
         <PrivateComp Item={<Footer />}/>
