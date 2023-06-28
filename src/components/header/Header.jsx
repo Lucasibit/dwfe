@@ -27,7 +27,15 @@ function Header({ setTheme, tema }) {
     }
 
     const switchClassName = isChecked ? 'form-check form-switch checked' : 'form-check form-switch';
+    
 
+  const [clicked, setClicked] = useState(false)
+  const handleClick = () => {
+    setClicked(!clicked)
+
+  }
+
+  
     return (
         <div className="header-museu">
             <header>
@@ -36,21 +44,13 @@ function Header({ setTheme, tema }) {
                 </div>
 
                   <nav>
-                      <ul>
+                      <ul id='navbar'  className={clicked ? "#navbar active" : "#navbar"}>
                           <li><Link to='/home'>Home</Link></li>
                           <li><Link to='/esculturas'>Esculturas</Link></li>
                           <li><Link to='/contato'>Contato</Link></li>
                           <li><Link to='/agendamento'>Agendamento</Link></li>
                           <li>
-                              
-                          </li>
-                          <li id='lastChield'>
-                          </li>
-                      </ul>
-
-                  </nav>
-
-                  <div className='themeAndUser'>
+                          <div className='themeAndUser'>
                     {
                       /*
                         <i class={`themeProvider ${tema !== "dark" ? "fa-regular fa-moon" : "fa-solid fa-sun-bright"}`} onClick={setTheme} id='moon'></i>
@@ -91,6 +91,19 @@ function Header({ setTheme, tema }) {
                     </div>
                     
                   </div>
+                              
+                          </li>
+                          <li id='lastChield'>
+                          </li>
+                      </ul>
+                      <div id='mobile' onClick={handleClick}>
+                        <i id='bar' className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
+                      </div>
+                    
+
+                  </nav>
+
+                 
             </header>
 
         </div>
