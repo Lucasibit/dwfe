@@ -58,19 +58,13 @@ function Header({ setTheme, tema }) {
                       */
                     }
                     <div class={switchClassName}>
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        role="switch"
-                        id="flexSwitchCheckDefault"
-
-                      />
+                      
                       <label class="form-check-label" for="flexSwitchCheckDefault">
                         <i className={`themeProvider fa-regular fa-moon`} onClick={setTheme} id='moon'></i>
                       </label>
                     </div>
                     <div className='userDropContainer'>
-                      <div>
+                      <div className='user-btn'>
                         <button type="button" className='userIcon' onClick={handleOnClick}><i class="far fa-user" id='userIcon'></i></button>
                       </div>
                       

@@ -50,6 +50,13 @@ header i {
   color: #ffbb33;
 }
 
+nav{
+  padding-top: 1rem;
+}
+
+.user-btn{
+  padding-bottom: 0.7rem;
+}
 #navbar {
   display: flex;
   align-items: center;
@@ -65,7 +72,6 @@ header i {
 #navbar li a {
   text-decoration: none;
   font-size: 1.3rem;
-  font-weight: 600;
 }
 
 
@@ -203,16 +209,15 @@ header i {
   color: #333;
 }
 
-@media screen and (max-width:769px){
+@media screen and (max-width:1250px){
 
   #navbar {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     position: absolute;
     top: 90px;
-    right: -300px;
     width: 250px;
     height: 100vh;
     background: #222;
@@ -223,12 +228,16 @@ header i {
     margin: 0;
     transition: 0.3s ease-in-out;
   }
-
   #mobile {
     display: block;
   }
 
+  #moon{
+    padding-top: 1rem;
+  }
+
   #navbar.active {
+    display: flex;
     right: 0px;
   }
 

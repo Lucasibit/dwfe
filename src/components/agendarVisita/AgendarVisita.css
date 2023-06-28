@@ -88,12 +88,13 @@
 }
 
 @media screen and (max-width: 1000px) {    
-    .form input, .form select {
+    .form input, .form select, .submit {
         width: 25rem;
     }
 
     .contentVisita{
         width: 70%;
+        display: flex;
     }
 }
 
