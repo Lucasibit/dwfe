@@ -6,25 +6,25 @@ import useAuth from '../../hooks/useAuth';
 
 function Header({ setTheme, tema }) {
 
-    const {user, Signout} = useAuth();
-    const [showDrop, setShowDrop] = useState(false);
-    const [isChecked, setIsChecked] = useState(false);
-    const navigate = useNavigate();
+  const { user, Signout } = useAuth();
+  const [showDrop, setShowDrop] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+  const navigate = useNavigate();
 
-    function handleOnClick(){
-      setShowDrop(!showDrop);
-    }
+  function handleOnClick() {
+    setShowDrop(!showDrop);
+  }
 
-    function VerificarRole(){
-      console.log(user);
-      return user.role === "museu:admin" ? (<Link to="/users" className='btn'>Gerir Usuários</Link>) : "";
-    }
+  function VerificarRole() {
+    console.log(user);
+    return user.role === "museu:admin" ? (<Link to="/users" className='btn'>Gerir Usuários</Link>) : "";
+  }
 
 
-    function handleOnChange(){
-      setIsChecked(!isChecked);
-      setTheme();
-    }
+  function handleOnChange() {
+    setIsChecked(!isChecked);
+    setTheme();
+  }
 
     const switchClassName = isChecked ? 'form-check form-switch checked' : 'form-check form-switch';
     
@@ -106,9 +106,9 @@ function Header({ setTheme, tema }) {
                  
             </header>
 
-        </div>
+    </div>
 
-    )
+  )
 }
 
 export default Header;
