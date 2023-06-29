@@ -6,9 +6,53 @@
       "senha": "1",
       "role": "museu:admin",
       "id": 1
+    },
+    {
+      "nome": "Teste",
+      "email": "teste@gmail.com",
+      "senha": "1",
+      "role": "museu:user",
+      "id": 2
+    },
+    {
+      "nome": "teste",
+      "email": "teste1@gmail.com",
+      "senha": "1",
+      "role": "museu:user",
+      "id": 3
+    },
+    {
+      "nome": "ultimo teste",
+      "email": "test@gmail.com",
+      "senha": "1",
+      "role": "museu:user",
+      "id": 4
     }
   ],
   "visitas": [
+    {
+      "data": "2023-06-29",
+      "horario": "16:00 as 20:00",
+      "pessoas": [
+        {
+          "tipoDocumento": "cpf",
+          "documentInput": "111.111.111-11",
+          "nome": "Lucas",
+          "tipoIngresso": "inteira"
+        },
+        {
+          "tipoDocumento": "rg",
+          "documentInput": "MG-11.111.-11",
+          "nome": "Theo",
+          "tipoIngresso": "isento"
+        }
+      ],
+      "email": "teste@gmail.com",
+      "celular": "32999430102",
+      "quantidade": "2",
+      "idUsuario": 1,
+      "id": 1
+    },
     {
       "data": "2023-06-29",
       "horario": "07:00 as 12:00",
@@ -21,16 +65,16 @@
         },
         {
           "tipoDocumento": "cpf",
-          "documentInput": "111",
-          "nome": "theo",
+          "documentInput": "1111",
+          "nome": "teste",
           "tipoIngresso": "meia"
         }
       ],
       "email": "lucas@gmail.com",
-      "celular": "1111",
+      "celular": "1",
       "quantidade": "2",
-      "idUsuario": 1,
-      "id": 1
+      "idUsuario": 3,
+      "id": 2
     }
   ],
   "esculturas": [

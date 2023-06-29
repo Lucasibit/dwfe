@@ -18,6 +18,13 @@
     border-radius: 16px;
 }
 
+#link-agendamentos a{
+    color: #222;
+    background-color: #ffbb33;
+    border: none;
+
+}
+
 .date, .hour, .quantity {
     display: flex;
     flex-direction: column;

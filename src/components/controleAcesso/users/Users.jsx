@@ -2,13 +2,16 @@ import axios from "axios";
 import { useState, useEffect } from "react"
 import useAuth from '../../../hooks/useAuth';
 import Alert from 'react-bootstrap/Alert';
+import { Link } from "react-router-dom";
 
-function Users(){
+import './users.css';
+
+function Users({history}){
 
     const[users, setUsers] = useState([]);
+
     const {user, Signout} = useAuth();
     const [show, setShow] = useState(false);
-
 
     useEffect( () => {
         try{
@@ -54,6 +57,7 @@ function Users(){
                             <th scope="col">Nome</th>
                             <th scope="col">Usuário</th>
                             <th scope="col">Role</th>
+                            <th scope="col">Verificar agendamentos (<Link to={"/agendamentos?all=true"}>Todos</Link>)</th>
                             <th scope="col">Açoes</th>
                         </tr>
                     </thead>
@@ -64,6 +68,7 @@ function Users(){
                                 <td>{user.nome}</td>
                                 <td>{user.email}</td>
                                 <td>{user.role}</td>
+                                <td><Link to={`/agendamentos?userId=${user.id}`}>Agedamentos</Link></td>
                                 <td><button type="button" className="btn btn-danger" onClick={() => DeleteUser(user.id)}>APAGAR</button></td>
                             </tr>
                         ))}

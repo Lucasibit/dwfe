@@ -13,6 +13,7 @@ import useAuth from './hooks/useAuth';
 import './app.css'
 import Registrar from './components/controleAcesso/registrar/Registrar';
 import Users from './components/controleAcesso/users/Users';
+import Agendamentos from './components/agendamentos/Agendamentos';
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -50,9 +51,9 @@ function App() {
             <Route exact path="/agendamento" element={<Private Item={AgendarVisita} />} />
             <Route exact path="/contato" element={<Private Item={Contato} />} />
             <Route exact path="/users" element={<Private Item={Users} />} />
+            <Route exact path="/agendamentos" element={<Private Item={Agendamentos} />} />
             <Route exact path='/registrar' element={<PrivateAcesso Item={<Registrar/>} />}/>
             <Route path='/' element={<PrivateAcesso Item={<Login/>} />}/>
-            <Route path='*' element={<Private Item={<Home/>} />}/>
           </Routes>
         </div>
         <PrivateComp Item={<Footer />}/>

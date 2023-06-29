@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import { Link } from 'react-router-dom';
 import VisitantesCadastro from './VisitantesCadastro';
 import './AgendarVisita.css';
 import axios from 'axios';
@@ -64,6 +64,9 @@ function AgendarVisita(){
 
     return (
         <div className='agendarVisita'>
+            <div id='link-agendamentos'>
+                <Link to={`/agendamentos?userId=${user.id}`} className='btn btn-primary'>Meus Agendamentos</Link>
+            </div>
             <div className='contentVisita'>
                 <h1>Agende sua Visita!</h1>
                 <div className="form">

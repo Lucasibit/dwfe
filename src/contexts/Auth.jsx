@@ -5,7 +5,7 @@ export const AuthContext = createContext({});
 
 function AuthProvider({children}){
 
-    const [user, setUser] = useState();
+    const [user, setUser] = useState({nome:"", email:"", senha:"", id:0, role:"museu:user"});
     const [allUsers, setAllUsers] = useState([]);
     const [logado, setLogado] = useState(false);
 
@@ -24,6 +24,7 @@ function AuthProvider({children}){
     useEffect(() => {
         const fetchData = async () => {
             try{
+                const intervalId = setInterval(async ()=> {
                     const data = await getAllUsers();
         
                     setAllUsers(data);
@@ -40,7 +41,11 @@ function AuthProvider({children}){
                             setUser(hasUser[0]);
                         }
                     }
-        
+                }, 2000)
+                    
+                return () => {
+                    clearInterval(intervalId);
+                };
             }catch(e){
                 console.log(e);
             }
